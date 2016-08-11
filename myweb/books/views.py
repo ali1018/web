@@ -8,4 +8,4 @@ def  table(request):
                 'Una': [23, 'girl', 'Tester'],
                 'Brant': [23, 'girl', 'Tester'],
                 'David': [23, 'boy', 'Tester']}
-    return render_to_response('table.html', {'student_list': table})
+    return render_to_response('table.html', {'student_list': students})

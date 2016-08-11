@@ -22,17 +22,17 @@
         <br><br>
 
         <div class="well">
-        <h2>student information</h2>
+            <h2>student information</h2>
             {% if student_list %}
                 <table class='table'>
                     <th>name</th><th>age</th><th>sex</th><th>occupation</th>
                         {% for k,v in student_list.items %}
                             <tr> <td>{{ k }} </td>
                                 {% for i in v %}
-                                    <td>{{ i }} </td>
-                                {% endfor %}
-                             </tr>
+                            <td>{{ i }} </td>
                         {% endfor %}
+                    </tr>
+                {% endfor %}
                 </table>
             {% endif %}
         </div>
