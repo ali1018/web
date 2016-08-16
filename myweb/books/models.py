@@ -34,3 +34,11 @@ class  Book(models.Model):
 
     def __str__(self):
         return self.title
+
+# file upload
+class  File(models.Model):
+    filename = models.CharField(max_length=30)
+    fileway = models.FileField(upload_to='./upload/')
+
+    def __str__(self):
+        return self.filename

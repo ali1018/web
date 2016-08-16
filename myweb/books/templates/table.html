@@ -21,20 +21,39 @@
 
         <br><br>
 
-        <div class="well">
-            <h2>student information</h2>
-            {% if student_list %}
-                <table class='table'>
-                    <th>name</th><th>age</th><th>sex</th><th>occupation</th>
-                        {% for k,v in student_list.items %}
-                            <tr> <td>{{ k }} </td>
-                                {% for i in v %}
-                            <td>{{ i }} </td>
+        <div class="container">
+            <div class="row">
+                <h2>book list</h2>
+                    <table class='table'>
+                        <th>name</th><th>publisher</th><th>data</th><th>authors</th>
+                        {% for book in book_list %}
+                        <tr class='success' >
+                            <td>{{book.title}}</td>
+                            <td>{{ book.publisher.name }}</td>
+                        <td>{{book.publication_date}}</td>
+                        <td>
+                            {% for author in book.authors.values %}
+                                {{author.first_name}}
+                            {% endfor %}
+                        </td>
                         {% endfor %}
                     </tr>
-                {% endfor %}
-                </table>
-            {% endif %}
+                    </table>
+                </div>
+            <!-- Paging capabilities -->
+            <div class="pagination">
+                    <span class="step-links">
+                        {% if pages.has_previous %}
+                            <a href="?page={{ pages.previous_page_number }}">previous</a>
+                        {% endif %}
+                            <span class="current">
+                                Page {{ pages.number }} of {{ pages.paginator.num_pages }}.
+                            </span>
+                        {% if pages.has_next %}
+                            <a href="?page={{ pages.next_page_number }}">next</a>
+                        {% endif %}
+                    </span>
+            </div>
         </div>
 
             <footer>

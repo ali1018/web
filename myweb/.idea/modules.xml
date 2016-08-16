@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://D:/BTSearch/.idea/BTSearch.iml" filepath="D:/BTSearch/.idea/BTSearch.iml" />
       <module fileurl="file://$PROJECT_DIR$/../django-bootstrap3/.idea/django-bootstrap3.iml" filepath="$PROJECT_DIR$/../django-bootstrap3/.idea/django-bootstrap3.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/myweb.iml" filepath="$PROJECT_DIR$/.idea/myweb.iml" />
     </modules>

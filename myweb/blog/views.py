@@ -4,12 +4,14 @@ from django.shortcuts import render_to_response
 from blog.models import Blog
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
+
+#from myweb.blog.models import Blog
+
 user = [0]
 username = [0]
 
 @login_required
 def index(request):
-
     blog_list = Blog.objects.all()  #定义blog的列表 继承 Blog的属性
     #username = request.COOKIES.get('username', '')  # 读取浏览器 cookie
     username = request.session.get('username','') #读取用户session
@@ -39,3 +41,4 @@ def  logout(request):
     #response.delete_cookie('username') # 清理 cookie 里保存 username
     del request.session['username']  #清理用户session
     return response
+
